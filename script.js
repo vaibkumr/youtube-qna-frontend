@@ -58,6 +58,10 @@ form.addEventListener("submit", function(event) {
       url: url,
       type: 'GET',
       dataType: 'json',
+      crossDomain: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },      
       beforeSend: function() {
          // Show the loader
          $('.ajax-loader').css("visibility", "visible");
