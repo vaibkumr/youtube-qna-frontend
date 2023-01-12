@@ -52,7 +52,7 @@ form.addEventListener("submit", function(event) {
     alert("Invalid URL")
   }
   else{
-    let url = 'http://vaiku.pythonanywhere.com/video/'+video_id
+    let url = 'https://vaiku.pythonanywhere.com/video/'+video_id
 
     $.ajax({
       url: url,
