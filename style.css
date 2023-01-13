@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
 
 body {
 	height: 100%;
-	margin: 0;
-	padding: 0;
+	width: 100%;
 	font-family: 'arial', sans-serif;
 }
 
@@ -16,11 +16,14 @@ body {
 iframe {
 	border: none;
 }
+img{
+	display:block;
+    margin:auto;
+}
 
 .form-container {
 	display: block;
 	flex-direction: column;
-	align-items: center;
 	width: 50%;
 	padding: 10em 1em;
 }
@@ -131,17 +134,11 @@ iframe {
 }
 
 .footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	/* background-color: #ef0800;
-	*/
-	color: black;
 	text-align: center;
 }
 
 .footer p {
+	text-align: center;
 	font-size: 1em;
 }
 
@@ -161,7 +158,6 @@ iframe {
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 h1 {
 	font-family: 'arial', sans-serif;
@@ -170,12 +166,6 @@ h1 {
 
 }
 
-.main-div {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
 
 .btn {
 	width: 100%;
