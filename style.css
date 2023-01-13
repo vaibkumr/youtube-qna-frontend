@@ -1,24 +1,32 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'arial', sans-serif;
+}
+
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+	padding: 100px 8px;
 }
 
 .container_no {
-	/* display: flex; */
+	/* display: flex;
+	*/
 	display: none;
 	align-items: center;
 	justify-content: center;
 }
 
 iframe {
-    border: none;
-    /* height: calc(100vh - 30px); */
-  }  
+	border: none;
+	/* height: calc(100vh - 30px);
+	*/
+}
 
 .form-container {
-	display: flex;
+	display: block;
 	flex-direction: column;
 	align-items: center;
 }
@@ -26,148 +34,177 @@ iframe {
 .form-container p {
 	font-family: 'Courier New', Courier, monospace;
 	text-align: center;
-	color:rgb(100, 100, 100);
+	color: rgb(100, 100, 100);
 	font-size: 0.8em;
 	font-style: italic;
 	width: 400px;
 }
-  
-.form-group {
-	display: flex;
-    justify-content: center;
-	margin: 5px 0;
-}
 
+.form-group {
+	display: block;
+	justify-content: center;
+	margin: 5px 0;
+	width: 100%;
+}
 
 .form-control {
 	padding: 8px;
-	width: 400px;
-}
-
-.btn {
-padding: 8px 16px;
-width: 100%;
+	width: 100%;
 }
 
 
-body {
-	margin:0;
-	padding:0;
-	font-family: 'arial', sans-serif;
-  }
-  
-  
-  .faq-list {
-    	display: flex;
-		flex-direction: column;
-		list-style: none;
-	  padding: 0;
-  }
-  
-  .faq-list li {
-	  margin: 30px 0;
-	border: 1px solid rgb(205, 205, 205);
-	  padding: 27px 30px;
-	  margin: 0px auto 30px;
-	  text-align: left;
-	  width: 550px;
-  }
-  
-  
-  .faq-list .faq-heading::before {
-	  content: '+';
-	 font-size: 40px;
-	  display: block;
-	  position: absolute;
-	 right:0;
-	  top: -8px;
-	color:#c2c2c2;
-  }
-  
-  .faq-list .the-active .faq-heading::before {
-	  content: '-';
-	
-  }
-  
-  .faq-heading {
-	  position: relative;
-	  cursor: pointer;
-	  font-size: 18px;
+.faq-list {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	padding: 0;
+}
+
+.faq-list li {
+	margin: 30px 0;
+	border: 1px solid #cb997e;
+	padding: 27px 30px;
+	margin: 0px auto 30px;
+	text-align: left;
+	width: 650px;
+}
+
+.faq-list .faq-heading::before {
+	content: '+';
+	font-size: 40px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: -8px;
+	color: #cb997e;
+}
+
+.faq-list .the-active .faq-heading::before {
+	content: '-';
+}
+
+.faq-heading {
+	position: relative;
+	cursor: pointer;
+	font-size: 18px;
 	font-weight: 400;
-	margin:0;
-  }
-  
-  .faq-heading:hover {
-	  color: var(--theme-color);
-  }
-  
-  .faq-text {
-	  display: none;
-  }
-  .container {
+	margin: 0;
+}
+
+.faq-heading:hover {
+	color: var(--theme-color);
+}
+
+.faq-text {
+	display: none;
+}
+
+.container {
 	width: 1200px;
 	margin: auto;
-  }
-  .art-box svg {
-	width:100%;
-  }
-  .row {
-	display:flex;
-  }
-  .row .col {
-	flex-basis: 50%;
-  }
-  .read {
-	  color: rgb(100, 100, 100);
-	  font-size: 16px;
-	  line-height: 1.5;
-	  margin-top: 25px;
-  }
+}
 
-  .ajax-loader {
+.art-box svg {
+	width: 100%;
+}
+
+.row {
+	display: flex;
+}
+
+.row .col {
+	flex-basis: 50%;
+}
+
+.read {
+	color: rgb(100, 100, 100);
+	font-size: 16px;
+	line-height: 1.5;
+	margin-top: 25px;
+}
+
+.ajax-loader {
 	visibility: hidden;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255, 255, 255, 0.7);
 	position: fixed;
 	z-index: +100 !important;
 	width: 100%;
-	height:100%;
-  }
-  
-  .ajax-loader img {
+	height: 100%;
+}
+
+.ajax-loader img {
 	position: fixed;
-	top:50%;
-	left:50%;
+	top: 50%;
+	left: 50%;
 	width: 100px;
 	transform: translate(-50%, -50%);
-  }
+}
 
-  .footer {
+.footer {
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	/* background-color: #ef0800; */
+	/* background-color: #ef0800;
+	*/
 	color: black;
 	text-align: center;
- }
+}
 
- .footer p{
+.footer p {
 	font-size: 1em;
- }
+}
 
- 
- .fa {
+.fa {
 	text-decoration: none;
-  }
-  
-  /* Add a hover effect if you want */
-  .fa:hover {
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
 	opacity: 0.7;
-  }
-  
-  
-  /* Twitter */
-  .fa-twitter {
-	background: white;
+}
+
+/* Twitter */
+.fa-twitter {
+	background: #fff;
 	color: #55ACEE;
-  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+h1 {
+	font-family: 'arial', sans-serif;
+	color: #473335;
+	font-weight: bolder;
+
+}
+
+.main-div {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.btn {
+	width: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+	background-color: #ddbea9;
+	outline: none;
+	border: 2px solid #000;
+	padding: 10px;
+	border-radius: 10%;
+	font-weight: bold;
+	box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.75);
+	cursor: pointer;
+	transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out, color 0.2s ease-in;
+}
+
+.btn:active {
+	background-color: #cb997e;
+	box-shadow: 0px -1px 0px -1px;
+	transition: all 0.3s ease;
+}
