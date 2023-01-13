@@ -7,10 +7,6 @@ body {
 	font-family: 'arial', sans-serif;
 }
 
-.container {
-	padding: 100px 8px;
-}
-
 .container_no {
 	display: none;
 	align-items: center;
@@ -25,6 +21,8 @@ iframe {
 	display: block;
 	flex-direction: column;
 	align-items: center;
+	width: 50%;
+	padding: 10em 1em;
 }
 
 .form-container p {
@@ -33,21 +31,17 @@ iframe {
 	color: rgb(100, 100, 100);
 	font-size: 0.8em;
 	font-style: italic;
-	width: 400px;
 }
 
 .form-group {
 	display: block;
 	justify-content: center;
 	margin: 5px 0;
-	width: 100%;
 }
 
 .form-control {
 	padding: 8px;
-	width: 100%;
 }
-
 
 .faq-list {
 	display: flex;
