@@ -28,12 +28,31 @@ img{
 	padding: 10em 1em;
 }
 
-.form-container p {
+.instructions {
 	font-family: 'Courier New', Courier, monospace;
 	text-align: center;
 	color: rgb(100, 100, 100);
 	font-size: 0.8em;
 	font-style: italic;
+	padding: 1em;
+}
+
+.link2 {
+	font-family: 'Courier New', Courier, monospace;
+	text-align: center;
+	color: #cb997e;
+	font-weight: bold;
+}
+
+.link2 a {
+    color: #7c3d23;
+		border-bottom: .1em solid #e8e1d8;
+		transition: background-color .2s ease-in-out;
+    text-decoration: none;
+}
+
+.link2 a:hover {
+    background-color: #e8e1d8;
 }
 
 .form-group {
@@ -140,6 +159,7 @@ img{
 .footer p {
 	text-align: center;
 	font-size: 1em;
+	color: #7c3d23;
 }
 
 .fa {
@@ -163,7 +183,6 @@ h1 {
 	font-family: 'arial', sans-serif;
 	color: #473335;
 	font-weight: bolder;
-
 }
 
 
@@ -188,3 +207,16 @@ h1 {
 	box-shadow: 0px -1px 0px -1px;
 	transition: all 0.3s ease;
 }
+
+.HeaderLogo {
+    width: 100%;
+	padding: 2em 1em;
+	text-align: center;
+}
+
+  .HeaderLogoWraper {
+    margin: 0 auto;
+	text-align: center;
+    width: 100%;
+}
+  
