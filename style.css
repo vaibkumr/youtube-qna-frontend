@@ -1,17 +1,11 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
 
 body {
-	position: relative;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: 'arial', sans-serif;
 }
-
-html, body {
-	overflow-x: hidden;
-}
-
 
 .container {
 	padding: 100px 8px;
