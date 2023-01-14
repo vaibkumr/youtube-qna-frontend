@@ -63,6 +63,9 @@ img{
 
 .form-control {
 	padding: 8px;
+	width: 80%;
+	max-width: 30em;
+	min-width: 20em;
 }
 
 .faq-list {
@@ -192,7 +195,8 @@ h1 {
 
 
 .btn {
-	width: 100%;
+	width: 70%;
+	max-width: 10em;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #000;
@@ -204,6 +208,7 @@ h1 {
 	font-weight: bold;
 	box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.75);
 	cursor: pointer;
+	margin-top: 1em;
 	transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out, color 0.2s ease-in;
 }
 
