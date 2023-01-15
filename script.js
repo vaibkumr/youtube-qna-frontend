@@ -1,5 +1,13 @@
 const form = document.getElementById("ytvideo");
 const buttons = form.querySelectorAll("button[type='submit']");
+var token = ""
+
+grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LdK5_sjAAAAAGT1Ka347K3LbhyHdSBbwti1icI7', {action: 'login'}).then(function(tok) {
+        token = tok
+    });
+});
+
 function read_url_populate_form(){
     var urlParams = new URLSearchParams(window.location.search);
     var video_id = urlParams.get('v');
@@ -65,10 +73,10 @@ var summary = function() {
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video_su/' + video_id
+        let url = 'https://vaiku.pythonanywhere.com/video_su' + '?video_id='+video_id+"&token="+token
         $.ajax({
             url: url,
-            type: 'GET',
+            type: 'POST',
             dataType: 'json',
             crossDomain: true,
             headers: {
@@ -124,11 +132,11 @@ var question = function() {
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video_qa/' + video_id
+        let url = 'https://vaiku.pythonanywhere.com/video_qa' + '?'+ '?video_id='+video_id+"&token="+token
 
         $.ajax({
             url: url,
-            type: 'GET',
+            type: 'POST',
             dataType: 'json',
             crossDomain: true,
             headers: {
