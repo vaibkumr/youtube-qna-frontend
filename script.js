@@ -74,7 +74,7 @@ var summary = function() {
         let url = 'https://vaiku.pythonanywhere.com/video_su?video_id='+video_id+"&token="+token
         $.ajax({
             url: url,
-            type: 'POST',
+            type: 'GET',
             dataType: 'json',
             crossDomain: true,
             headers: {
@@ -119,7 +119,7 @@ var question = function() {
 
         $.ajax({
             url: url,
-            type: 'POST',
+            type: 'GET',
             dataType: 'json',
             crossDomain: true,
             headers: {
