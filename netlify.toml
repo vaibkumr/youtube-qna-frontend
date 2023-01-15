@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  query = {v = ":v"} # apply this rule for /?path=example
