@@ -71,7 +71,7 @@ var summary = function() {
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video_su?video_id='+video_id+"&token="+token
+        let url = 'https://vaiku.pythonanywhere.com/video_su?video_id='+video_id+"&token="+token+"/"
         $.ajax({
             url: url,
             type: 'GET',
@@ -123,7 +123,9 @@ var question = function() {
             dataType: 'json',
             crossDomain: true,
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
             },
             beforeSend: function() {
                 // Show the loader
