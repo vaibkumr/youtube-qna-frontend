@@ -69,7 +69,7 @@ read_url_populate_form()
 function load_error(message){
     $('ul').empty()
     $(".error-box").css({
-        display: "flex"
+        display: "block"
     });
     $(".error-text").text(message);
 }
