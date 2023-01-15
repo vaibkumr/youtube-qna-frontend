@@ -85,6 +85,12 @@ var summary = function() {
     hide_error();
     let url = document.getElementById('text-field').value
     let video_id = youtube_parser(url)
+    var title = ""
+    var ttemp = 'https://www.youtube.com/watch?v=' + video_id;
+    $.getJSON('https://noembed.com/embed',
+            {format: 'json', url: ttemp}, function (data) {
+            title = data.title
+    });
     if (!video_id) {
         alert("Invalid URL")
     } else {
@@ -113,7 +119,7 @@ var summary = function() {
 
                 const qnaList = [];
                 qnaList.push({
-                    q: "Summary",
+                    q: title,
                     a: data.join("\n")})
                 load_data(qnaList);
                 $("h1.h1-qna").hide()
