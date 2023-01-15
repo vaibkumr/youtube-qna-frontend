@@ -123,9 +123,7 @@ var question = function() {
             dataType: 'json',
             crossDomain: true,
             headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-                'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+                'Access-Control-Allow-Origin': '*, GET, POST, PATCH, PUT, DELETE, OPTIONS, Origin, Content-Type, X-Auth-Token',
             },
             beforeSend: function() {
                 // Show the loader
