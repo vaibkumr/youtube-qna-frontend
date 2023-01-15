@@ -1,5 +1,6 @@
 const form = document.getElementById("ytvideo");
 const buttons = form.querySelectorAll("button[type='submit']");
+
 function read_url_populate_form(){
     var urlParams = new URLSearchParams(window.location.search);
     var video_id = urlParams.get('v');
@@ -25,10 +26,8 @@ function load_data(apiData) {
     //   { heading: "FAQ heading 4", text: "FAQ text 4" },
     //   { heading: "FAQ heading 5", text: "FAQ text 5" },
     // ];
-
     apiData.forEach(function(item) {
         var faqItem = document.createElement("li");
-
         var faqHeading = document.createElement("h4");
         faqHeading.classList.add("faq-heading");
         faqHeading.innerHTML = item.q;
@@ -52,14 +51,14 @@ function load_data(apiData) {
     });
 
     $('html,body').animate({
-        scrollTop: $(document).height() / 2
+        scrollTop: $(document).height() / 3
     }, 'slow');
 
 }
+
 read_url_populate_form()
 
 var summary = function() {
-    document.getElementById('form-title').value = "Generated Summary"
     let url = document.getElementById('text-field').value
     let video_id = youtube_parser(url)
     if (!video_id) {
@@ -80,11 +79,15 @@ var summary = function() {
             },
             success: function(data) {
                 // Do something with the data
+                console.log(data);
                 const qnaList = [];
                 qnaList.push({
                     q: "Summary",
                     a: data.join("\n")})
-                load_data(qnaList)
+                load_data(qnaList);
+                $("h1.h1-qna").hide()
+                $("h1.h1-summary").show()                
+                $('.faq-heading').parent('li').toggleClass('the-active').find('.faq-text').slideToggle();
             },
             complete: function() {
                 // Hide the loader
@@ -98,27 +101,8 @@ var summary = function() {
     }
 };
 
-buttons.forEach(button => {
-    button.addEventListener("click", e => {
-      // e.target refers to the button that was clicked
-      const clickedButton = e.target;
-      const buttonName = clickedButton.name;
-      console.log(buttonName)
-      e.preventDefault()
-      // do something based on the button that was clicked
-      if (buttonName === "quest") {
-        question()
-      } else if (buttonName === "summ") {
-        console.log("Button 2 was clicked!");
-      } else {
-        alert('Error');
-      }
-    });
-  });
-
-
 var question = function() {
-    document.getElementById('form-title').value = "Generated QnA"
+    $('#res_heading h2').contents().first().replaceWith('Generated QnA');
     let url = document.getElementById('text-field').value
     let video_id = youtube_parser(url)
     if (!video_id) {
@@ -139,7 +123,6 @@ var question = function() {
                 $('.ajax-loader').css("visibility", "visible");
             },
             success: function(data) {
-                // Do something with the data
                 console.log(data);
                 const qnaList = [];
                 for (let i = 0; i < data.length; i += 2) {
@@ -149,6 +132,8 @@ var question = function() {
                     });
                 }
                 load_data(qnaList)
+                $("h1.h1-qna").show()
+                $("h1.h1-summary").hide()
             },
             complete: function() {
                 // Hide the loader
@@ -161,6 +146,24 @@ var question = function() {
         });
     }
 };
+
+// buttons.forEach(button => {
+//     button.addEventListener("click", e => {
+//       // e.target refers to the button that was clicked
+//       const clickedButton = e.target;
+//       const buttonName = clickedButton.name;
+//       console.log(buttonName)
+//       e.preventDefault()
+//       // do something based on the button that was clicked
+//       if (buttonName === "quest") {
+//         question()
+//       } else if (buttonName === "summ") {
+//         console.log("Button 2 was clicked!");
+//       } else {
+//         alert('Error');
+//       }
+//     });
+// });
 
 buttons.forEach(button => {
     button.addEventListener("click", e => {
@@ -178,4 +181,4 @@ buttons.forEach(button => {
         alert('Error');
       }
     });
-  });
+});
