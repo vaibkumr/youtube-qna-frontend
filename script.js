@@ -65,7 +65,22 @@ function load_data(apiData) {
 
 read_url_populate_form()
 
+
+function load_error(message){
+    $(".error-box").css({
+        display: "flex"
+    });
+    $(".error-text").text(message);
+}
+
+function hide_error(){
+    $(".error-box").css({
+        display: "none"
+    });
+}
+
 var summary = function() {
+    hide_error();
     let url = document.getElementById('text-field').value
     let video_id = youtube_parser(url)
     if (!video_id) {
@@ -88,6 +103,12 @@ var summary = function() {
             success: function(data) {
                 // Do something with the data
                 console.log(data);
+                if(data.error){
+                    load_error(data.error);
+                    return
+                }   
+                data = data.data
+
                 const qnaList = [];
                 qnaList.push({
                     q: "Summary",
@@ -110,6 +131,7 @@ var summary = function() {
 };
 
 var question = function() {
+    hide_error();
     let url = document.getElementById('text-field').value
     let video_id = youtube_parser(url)
     if (!video_id) {
@@ -131,6 +153,11 @@ var question = function() {
             },
             success: function(data) {
                 console.log(data);
+                if(data.error){
+                    load_error(data.error);
+                    return
+                } 
+                data = data.data                  
                 const qnaList = [];
                 for (let i = 0; i < data.length; i += 2) {
                     qnaList.push({

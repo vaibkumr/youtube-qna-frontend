@@ -235,3 +235,13 @@ h1 {
     width: 100%;
 }
   
+.error-box {
+	display: none;
+	text-align: center;
+}
+  
+.error-text {
+	font-family: 'Courier New', Courier, monospace;
+	color: red;
+	font-size: 2em;
+}
