@@ -20,13 +20,14 @@
     </div>
     <div class="container h-100 d-flex align-items-center justify-content-center">
       <div class="h-100 d-flex form-container">
-        <form>
+        <form id="ytvideo">
           <div class="HeaderLogoWrapper"><div class="HeaderLogo"><a href="."><img src="assets/logo.png" height="70vh"></a></div></div>
           <div class="h-100 d-flex form-group">
             <input type="text" placeholder="https://youtu.be/dQw4w9WgXcQ" class="form-control" id="text-field" />
           </div>
           <div class="h-100 d-flex form-group">
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" name="quest" class="btn">QnA</button>
+            <button type="submit" name="summ" class="btn">Summary</button>
           </div>
           <p class="instructions">Enter a YouTube video URL (with subtitles) to generate relevant questions and answers</p>
           <p class="link2"><a href="how.html">How does this work?</a><br><a href="soon.html">[Source Code]</a></p>
@@ -37,7 +38,7 @@
     </div>
     <section>
       <div class="container_no">
-        <h1>Generated QnA</h1>
+        <h1 id="form-title">Generated QnA</h1>
       </div>
       <div class="container_no">
         <p class="link2 anki"><a href="#">[Download Anki Deck]</a></p>

@@ -1,5 +1,5 @@
-let form = document.querySelector("form");
-
+const form = document.getElementById("ytvideo");
+const buttons = form.querySelectorAll("button[type='submit']");
 function read_url_populate_form(){
     var urlParams = new URLSearchParams(window.location.search);
     var video_id = urlParams.get('v');
@@ -57,14 +57,74 @@ function load_data(apiData) {
 
 }
 read_url_populate_form()
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
+
+var summary = function() {
+    document.getElementById('form-title').value = "Generated Summary"
     let url = document.getElementById('text-field').value
     let video_id = youtube_parser(url)
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video/' + video_id
+        let url = 'https://vaiku.pythonanywhere.com/video_su/' + video_id
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            crossDomain: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            },
+            beforeSend: function() {
+                // Show the loader
+                $('.ajax-loader').css("visibility", "visible");
+            },
+            success: function(data) {
+                // Do something with the data
+                const qnaList = [];
+                qnaList.push({
+                    q: "Summary",
+                    a: data.join("\n")})
+                load_data(qnaList)
+            },
+            complete: function() {
+                // Hide the loader
+                $('.ajax-loader').css("visibility", "hidden");
+            },
+            error: function(error) {
+                // Handle any errors that may occur
+                console.error(error);
+            }
+        });
+    }
+};
+
+buttons.forEach(button => {
+    button.addEventListener("click", e => {
+      // e.target refers to the button that was clicked
+      const clickedButton = e.target;
+      const buttonName = clickedButton.name;
+      console.log(buttonName)
+      e.preventDefault()
+      // do something based on the button that was clicked
+      if (buttonName === "quest") {
+        question()
+      } else if (buttonName === "summ") {
+        console.log("Button 2 was clicked!");
+      } else {
+        alert('Error');
+      }
+    });
+  });
+
+
+var question = function() {
+    document.getElementById('form-title').value = "Generated QnA"
+    let url = document.getElementById('text-field').value
+    let video_id = youtube_parser(url)
+    if (!video_id) {
+        alert("Invalid URL")
+    } else {
+        let url = 'https://vaiku.pythonanywhere.com/video_qa/' + video_id
 
         $.ajax({
             url: url,
@@ -100,4 +160,22 @@ form.addEventListener("submit", function(event) {
             }
         });
     }
-});
+};
+
+buttons.forEach(button => {
+    button.addEventListener("click", e => {
+      // e.target refers to the button that was clicked
+      const clickedButton = e.target;
+      const buttonName = clickedButton.name;
+      console.log(buttonName)
+      e.preventDefault()
+      // do something based on the button that was clicked
+      if (buttonName === "quest") {
+        question()
+      } else if (buttonName === "summ") {
+        summary();
+      } else {
+        alert('Error');
+      }
+    });
+  });
