@@ -71,7 +71,7 @@ var summary = function() {
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video_su' + '?video_id='+video_id+"&token="+token
+        let url = 'https://vaiku.pythonanywhere.com/video_su?video_id='+video_id+"&token="+token
         $.ajax({
             url: url,
             type: 'POST',
@@ -115,7 +115,7 @@ var question = function() {
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video_qa' + '?'+ '?video_id='+video_id+"&token="+token
+        let url = 'https://vaiku.pythonanywhere.com/video_qa?video_id='+video_id+"&token="+token
 
         $.ajax({
             url: url,
