@@ -1,5 +1,14 @@
 let form = document.querySelector("form");
 
+function read_url_populate_form(){
+    var urlParams = new URLSearchParams(window.location.search);
+    var video_id = urlParams.get('v');
+    if(video_id){
+        url = window.location.href
+        document.getElementById('text-field').value = url.replace("youtubeqna.com","youtube.com")
+    }
+}
+
 function youtube_parser(url) {
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
     var match = url.match(regExp);
@@ -47,7 +56,7 @@ function load_data(apiData) {
     }, 'slow');
 
 }
-
+read_url_populate_form()
 form.addEventListener("submit", function(event) {
     event.preventDefault();
     let url = document.getElementById('text-field').value
