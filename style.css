@@ -241,8 +241,6 @@ h1 {
 	display: none;
 	flex-direction: column;
 	text-align: center;
-	align-items: center;
-	justify-content: center;	
 }
   
 .error-text {
