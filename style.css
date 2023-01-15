@@ -240,6 +240,8 @@ h1 {
 .error-box {
 	display: none;
 	text-align: center;
+	align-items: center;
+	justify-content: center;	
 }
   
 .error-text {

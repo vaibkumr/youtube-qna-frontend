@@ -67,6 +67,7 @@ read_url_populate_form()
 
 
 function load_error(message){
+    console.log("Loading Error...")
     $('ul').empty()
     $(".error-box").css({
         display: "flex"
