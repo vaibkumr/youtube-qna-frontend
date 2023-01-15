@@ -238,7 +238,6 @@ h1 {
 }
   
 .error-box {
-	width: 70%;
 	display: none;
 	flex-direction: column;
 	text-align: center;
