@@ -72,6 +72,7 @@ var summary = function() {
         alert("Invalid URL")
     } else {
         let url = 'https://vaiku.pythonanywhere.com/video_su?video_id='+video_id+"&token="+token
+        console.log(url)
         $.ajax({
             url: url,
             type: 'GET',
@@ -109,14 +110,13 @@ var summary = function() {
 };
 
 var question = function() {
-    $('#res_heading h2').contents().first().replaceWith('Generated QnA');
     let url = document.getElementById('text-field').value
     let video_id = youtube_parser(url)
     if (!video_id) {
         alert("Invalid URL")
     } else {
         let url = 'https://vaiku.pythonanywhere.com/video_qa?video_id='+video_id+"&token="+token
-
+        console.log(url)
         $.ajax({
             url: url,
             type: 'GET',
