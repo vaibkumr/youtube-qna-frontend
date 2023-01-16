@@ -1,2 +1,7 @@
 # YoutubeQnA
-Enter a YouTube video URL (with subtitles) to generate relevant questions and their answers using OpenAI GPT-3...
+
+Checkout: [YoutubeQnA](https://youtubeqna.com/)
+
+Enter a YouTube video URL (with subtitles) to generate relevant questions and answers/summary.
+
+
