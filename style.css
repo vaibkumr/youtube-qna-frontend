@@ -18,12 +18,12 @@ iframe {
 }
 
 .form-control::placeholder {
-    opacity: 0.3;
+	opacity: 0.3;
 }
 
-img{
-	display:block;
-    margin:auto;
+img {
+	display: block;
+	margin: auto;
 }
 
 .form-container {
@@ -36,21 +36,26 @@ img{
 .instructions {
 	font-family: 'arial', sans-serif;
 	color: #cb997e;
-	/* font-family: 'Courier New', Courier, monospace; */
+	/* font-family: 'Courier New', Courier, monospace;
+     */
 	text-align: center;
-	/* color: rgb(100, 100, 100); */
+	/* color: rgb(100, 100, 100);
+     */
 	font-size: 0.8em;
-	/* font-style: italic; */
+	/* font-style: italic;
+     */
 	padding: 1em;
 }
 
 .container_no p {
 	font-family: 'arial', sans-serif;
 	color: #cb997e;
-	/* font-family: 'Courier New', Courier, monospace; */
+	/* font-family: 'Courier New', Courier, monospace;
+     */
 	text-align: center;
 	font-size: 1em;
-	/* font-style: italic; */
+	/* font-style: italic;
+     */
 }
 
 .link2 {
@@ -61,14 +66,14 @@ img{
 }
 
 .link2 a {
-    color: #7c3d23;
-		border-bottom: .1em solid #e8e1d8;
-		transition: background-color .2s ease-in-out;
-    text-decoration: none;
+	color: #7c3d23;
+	border-bottom: .1em solid #e8e1d8;
+	transition: background-color .2s ease-in-out;
+	text-decoration: none;
 }
 
 .link2 a:hover {
-    background-color: #e8e1d8;
+	background-color: #e8e1d8;
 }
 
 .form-group {
@@ -95,11 +100,10 @@ img{
 	padding: 27px 30px;
 	margin: 0px 10px 15px 30px;
 	margin-left: auto;
-	margin-right: auto;	
+	margin-right: auto;
 	text-align: left;
 	max-width: 80%;
 	min-width: 80%;
-
 }
 
 .faq-list .faq-heading::before {
@@ -123,7 +127,6 @@ img{
 	font-weight: 400;
 	margin: 0;
 	padding: 0em 2em 0em 0em;
-
 }
 
 .faq-heading:hover {
@@ -136,7 +139,7 @@ img{
 
 .container {
 	width: auto;
-	margin: auto; 
+	margin: auto;
 }
 
 .art-box svg {
@@ -200,14 +203,11 @@ img{
 	color: #55ACEE;
 }
 
-
-
 h1 {
 	font-family: 'arial', sans-serif;
 	color: #473335;
 	font-weight: bolder;
 }
-
 
 .btn {
 	width: 70%;
@@ -235,23 +235,23 @@ h1 {
 }
 
 .HeaderLogo {
-    width: 100%;
+	width: 100%;
 	padding: 2em 1em;
 	text-align: center;
 }
 
-  .HeaderLogoWraper {
-    margin: 0 auto;
+.HeaderLogoWraper {
+	margin: 0 auto;
 	text-align: center;
-    width: 100%;
+	width: 100%;
 }
-  
+
 .error-box {
 	display: none;
 	flex-direction: column;
 	text-align: center;
 }
-  
+
 .error-text {
 	font-family: 'Courier New', Courier, monospace;
 	color: red;
@@ -260,180 +260,184 @@ h1 {
 
 .resp-sharing-button__link,
 .resp-sharing-button__icon {
-  display: inline-block
+	display: inline-block
 }
 
 .resp-sharing-button__link {
-  text-decoration: none;
-  color: #fff;
-  margin: 0.5em
+	text-decoration: none;
+	color: #fff;
+	margin: 0.5em
 }
 
 .resp-sharing-button {
-  border-radius: 5px;
-  transition: 25ms ease-out;
-  padding: 0.5em 0.75em;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+	border-radius: 5px;
+	transition: 25ms ease-out;
+	padding: 0.5em 0.75em;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif
 }
 
 .resp-sharing-button__icon svg {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.4em;
-  vertical-align: top
+	width: 1em;
+	height: 1em;
+	margin-right: 0.4em;
+	vertical-align: top
 }
 
 .resp-sharing-button--small svg {
-  margin: 0;
-  vertical-align: middle
+	margin: 0;
+	vertical-align: middle
 }
 
 /* Non solid icons get a stroke */
 .resp-sharing-button__icon {
-  stroke: #fff;
-  fill: none
+	stroke: #fff;
+	fill: none
 }
 
 /* Solid icons get a fill */
 .resp-sharing-button__icon--solid,
 .resp-sharing-button__icon--solidcircle {
-  fill: #fff;
-  stroke: none
+	fill: #fff;
+	stroke: none
 }
 
 .resp-sharing-button--twitter {
-  background-color: #55acee
+	background-color: #55acee
 }
 
 .resp-sharing-button--twitter:hover {
-  background-color: #2795e9
+	background-color: #2795e9
 }
 
 .resp-sharing-button--pinterest {
-  background-color: #bd081c
+	background-color: #bd081c
 }
 
 .resp-sharing-button--pinterest:hover {
-  background-color: #8c0615
+	background-color: #8c0615
 }
 
 .resp-sharing-button--facebook {
-  background-color: #3b5998
+	background-color: #3b5998
 }
 
 .resp-sharing-button--facebook:hover {
-  background-color: #2d4373
+	background-color: #2d4373
 }
 
 .resp-sharing-button--tumblr {
-  background-color: #35465C
+	background-color: #35465C
 }
 
 .resp-sharing-button--tumblr:hover {
-  background-color: #222d3c
+	background-color: #222d3c
 }
 
 .resp-sharing-button--reddit {
-  background-color: #5f99cf
+	background-color: #5f99cf
 }
 
 .resp-sharing-button--reddit:hover {
-  background-color: #3a80c1
+	background-color: #3a80c1
 }
 
 .resp-sharing-button--google {
-  background-color: #dd4b39
+	background-color: #dd4b39
 }
 
 .resp-sharing-button--google:hover {
-  background-color: #c23321
+	background-color: #c23321
 }
 
 .resp-sharing-button--linkedin {
-  background-color: #0077b5
+	background-color: #0077b5
 }
 
 .resp-sharing-button--linkedin:hover {
-  background-color: #046293
+	background-color: #046293
 }
 
 .resp-sharing-button--email {
-  background-color: #777
+	background-color: #777
 }
 
 .resp-sharing-button--email:hover {
-  background-color: #5e5e5e
+	background-color: #5e5e5e
 }
 
 .resp-sharing-button--xing {
-  background-color: #1a7576
+	background-color: #1a7576
 }
 
 .resp-sharing-button--xing:hover {
-  background-color: #114c4c
+	background-color: #114c4c
 }
 
 .resp-sharing-button--whatsapp {
-  background-color: #25D366
+	background-color: #25D366
 }
 
 .resp-sharing-button--whatsapp:hover {
-  background-color: #1da851
+	background-color: #1da851
 }
 
 .resp-sharing-button--hackernews {
-background-color: #FF6600
+	background-color: #FF6600
 }
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--hackernews:hover,
+.resp-sharing-button--hackernews:focus {
+	background-color: #FB6200
+}
 
 .resp-sharing-button--vk {
-  background-color: #507299
+	background-color: #507299
 }
 
 .resp-sharing-button--vk:hover {
-  background-color: #43648c
+	background-color: #43648c
 }
 
 .resp-sharing-button--facebook {
-  background-color: #3b5998;
-  border-color: #3b5998;
+	background-color: #3b5998;
+	border-color: #3b5998;
 }
 
 .resp-sharing-button--facebook:hover,
 .resp-sharing-button--facebook:active {
-  background-color: #2d4373;
-  border-color: #2d4373;
+	background-color: #2d4373;
+	border-color: #2d4373;
 }
 
 .resp-sharing-button--twitter {
-  background-color: #55acee;
-  border-color: #55acee;
+	background-color: #55acee;
+	border-color: #55acee;
 }
 
 .resp-sharing-button--twitter:hover,
 .resp-sharing-button--twitter:active {
-  background-color: #2795e9;
-  border-color: #2795e9;
+	background-color: #2795e9;
+	border-color: #2795e9;
 }
 
 .resp-sharing-button--email {
-  background-color: #777777;
-  border-color: #777777;
+	background-color: #777777;
+	border-color: #777777;
 }
 
 .resp-sharing-button--email:hover,
 .resp-sharing-button--email:active {
-  background-color: #5e5e5e;
-  border-color: #5e5e5e;
+	background-color: #5e5e5e;
+	border-color: #5e5e5e;
 }
 
 .resp-sharing-button--linkedin {
-  background-color: #0077b5;
-  border-color: #0077b5;
+	background-color: #0077b5;
+	border-color: #0077b5;
 }
 
 .resp-sharing-button--linkedin:hover,
 .resp-sharing-button--linkedin:active {
-  background-color: #046293;
-  border-color: #046293;
+	background-color: #046293;
+	border-color: #046293;
 }

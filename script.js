@@ -3,17 +3,19 @@ const buttons = form.querySelectorAll("button[type='submit']");
 var token = ""
 
 grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('6LdK5_sjAAAAAGT1Ka347K3LbhyHdSBbwti1icI7', {action: 'login'}).then(function(tok) {
+    grecaptcha.enterprise.execute('6LdK5_sjAAAAAGT1Ka347K3LbhyHdSBbwti1icI7', {
+        action: 'login'
+    }).then(function(tok) {
         token = tok
     });
 });
 
-function read_url_populate_form(){
+function read_url_populate_form() {
     var urlParams = new URLSearchParams(window.location.search);
     var video_id = urlParams.get('v');
-    if(video_id){
+    if (video_id) {
         url = window.location.href
-        document.getElementById('text-field').value = url.replace("youtubeqna.com","youtube.com")
+        document.getElementById('text-field').value = url.replace("youtubeqna.com", "youtube.com")
     }
 }
 
@@ -66,7 +68,7 @@ function load_data(apiData) {
 read_url_populate_form()
 
 
-function load_error(message){
+function load_error(message) {
     console.log("Loading Error...")
     $('ul').empty()
     $(".error-box").css({
@@ -75,19 +77,18 @@ function load_error(message){
     $(".error-text").text(message);
 }
 
-function hide_error(){
+function hide_error() {
     $(".error-box").css({
         display: "none"
     });
 }
 
-function generate_share_buttons(video_id){
-    $('.resp-sharing-button__link a').each(function() {
+function generate_share_buttons(video_id) {
+    $('a[class=resp-sharing-button__link]').each(function() {
         var oldHref = $(this).attr('href');
         var newHref = oldHref.replace('VIDEO_ID', video_id);
         $(this).attr('href', newHref);
-      });
-      
+    });
 }
 
 var summary = function() {
@@ -96,14 +97,16 @@ var summary = function() {
     let video_id = youtube_parser(url)
     var title = ""
     var ttemp = 'https://www.youtube.com/watch?v=' + video_id;
-    $.getJSON('https://noembed.com/embed',
-            {format: 'json', url: ttemp}, function (data) {
-            title = data.title
+    $.getJSON('https://noembed.com/embed', {
+        format: 'json',
+        url: ttemp
+    }, function(data) {
+        title = data.title
     });
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video_su?video_id='+video_id+"&token="+token
+        let url = 'https://vaiku.pythonanywhere.com/video_su?video_id=' + video_id + "&token=" + token
         console.log(url)
         $.ajax({
             url: url,
@@ -120,19 +123,20 @@ var summary = function() {
             success: function(data) {
                 // Do something with the data
                 console.log(data);
-                if(data.error){
+                if (data.error) {
                     load_error(data.error);
                     return
-                }   
+                }
                 data = data.data
 
                 const qnaList = [];
                 qnaList.push({
                     q: title,
-                    a: data.join("\n")})
+                    a: data.join("\n")
+                })
                 load_data(qnaList);
                 $("h1.h1-qna").hide()
-                $("h1.h1-summary").show()                
+                $("h1.h1-summary").show()
                 $('.faq-heading').parent('li').toggleClass('the-active').find('.faq-text').slideToggle();
                 generate_share_buttons(video_id);
             },
@@ -155,7 +159,7 @@ var question = function() {
     if (!video_id) {
         alert("Invalid URL")
     } else {
-        let url = 'https://vaiku.pythonanywhere.com/video_qa?video_id='+video_id+"&token="+token
+        let url = 'https://vaiku.pythonanywhere.com/video_qa?video_id=' + video_id + "&token=" + token
         console.log(url)
         $.ajax({
             url: url,
@@ -171,11 +175,11 @@ var question = function() {
             },
             success: function(data) {
                 console.log(data);
-                if(data.error){
+                if (data.error) {
                     load_error(data.error);
                     return
-                } 
-                data = data.data                  
+                }
+                data = data.data
                 const qnaList = [];
                 for (let i = 0; i < data.length; i += 2) {
                     qnaList.push({
@@ -220,18 +224,18 @@ var question = function() {
 
 buttons.forEach(button => {
     button.addEventListener("click", e => {
-      // e.target refers to the button that was clicked
-      const clickedButton = e.target;
-      const buttonName = clickedButton.name;
-      console.log(buttonName)
-      e.preventDefault()
-      // do something based on the button that was clicked
-      if (buttonName === "quest") {
-        question()
-      } else if (buttonName === "summ") {
-        summary();
-      } else {
-        alert('Error');
-      }
+        // e.target refers to the button that was clicked
+        const clickedButton = e.target;
+        const buttonName = clickedButton.name;
+        console.log(buttonName)
+        e.preventDefault()
+        // do something based on the button that was clicked
+        if (buttonName === "quest") {
+            question()
+        } else if (buttonName === "summ") {
+            summary();
+        } else {
+            alert('Error');
+        }
     });
 });
