@@ -81,6 +81,15 @@ function hide_error(){
     });
 }
 
+function generate_share_buttons(video_id){
+    $('.resp-sharing-button__link a').each(function() {
+        var oldHref = $(this).attr('href');
+        var newHref = oldHref.replace('VIDEO_ID', video_id);
+        $(this).attr('href', newHref);
+      });
+      
+}
+
 var summary = function() {
     hide_error();
     let url = document.getElementById('text-field').value
@@ -125,6 +134,7 @@ var summary = function() {
                 $("h1.h1-qna").hide()
                 $("h1.h1-summary").show()                
                 $('.faq-heading').parent('li').toggleClass('the-active').find('.faq-text').slideToggle();
+                generate_share_buttons(video_id);
             },
             complete: function() {
                 // Hide the loader
@@ -176,6 +186,7 @@ var question = function() {
                 load_data(qnaList)
                 $("h1.h1-qna").show()
                 $("h1.h1-summary").hide()
+                generate_share_buttons(video_id);
             },
             complete: function() {
                 // Hide the loader
